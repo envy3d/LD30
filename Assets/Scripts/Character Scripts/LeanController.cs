@@ -15,7 +15,6 @@ public class LeanController : MonoBehaviour
 	private Vector3 prevVelocity;
 	private Vector3 velocityRef;
 	public Vector3 accel;
-	private Vector3 prevAccel;
 	public Vector3 prevPosition;
 	public Quaternion prevRotation;
 	private float prevLean;
@@ -36,13 +35,12 @@ public class LeanController : MonoBehaviour
         targetVelocity.x = amount;
     }
 
-	void FixedUpdate() 
+	void Update() 
 	{
 		prevVelocity = velocity;
-		prevAccel = accel;
 
 		Vector3 targetAccel = Vector3.zero;
-		
+
 		targetVelocity = targetVelocity.normalized*moveSpeed;
 		
 		velocity = Vector3.SmoothDamp (velocity , targetVelocity , ref velocityRef , Time.deltaTime * moveSmooth);
@@ -50,7 +48,6 @@ public class LeanController : MonoBehaviour
 		targetAccel = (velocity - prevVelocity) / Time.deltaTime;
 		
 		accel = Vector3.Lerp (accel,targetAccel,Time.deltaTime);
-		
 		
 		if(faceMoveDirection)
 		{

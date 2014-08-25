@@ -1,28 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerInput : IInput
+public class PlayerInput : AbstractInput
 {
+    private PlayerScript player;
+    private Combatant combat;
 
-	void Start()
+    void Start()
     {
         base.Start();
+        player = gameObject.GetComponent<PlayerScript>();
+        combat = gameObject.GetComponent<Combatant>();
 	}
-	
-	void Update()
+
+    void Update()
     {
-        base.Update();
-
-        controller.Move(Input.GetAxis("Horizontal"));
-
-        if (controller.TouchingGround && Input.GetButtonDown("Jump"))
+        if (enabled)
         {
+            controller.Move(Input.GetAxis("Horizontal"));
 
+            if (controller.TouchingGround && Input.GetButtonDown("Jump"))
+            {
+
+            }
+            else if (Input.GetButtonDown("Action"))
+            {
+                if (player.Interact())
+                {
+
+
+                }
+                else
+                {
+                    combat.Attack();
+                }
+            }
         }
-        else if (Input.GetButtonDown("Action"))
-        {
+    }
 
-        }
-
-	}
 }

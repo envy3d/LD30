@@ -4,9 +4,11 @@ using System.Collections.Generic;
 
 public class CityScript : MonoBehaviour
 {
-
+    public string name;
     public string language;
     public string currency;
+    public Transform camelDestination;
+    public BoxCollider playerDestination;
 
     public List<CityGood> cityGoods;
 
