@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: 5e49db21e4326ff4b870f254e67e275f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: camel
+    100004: head
+    100006: L_front_foot
+    100008: L_front_knee
+    100010: L_front_leg
+    100012: L_hind_foot
+    100014: L_hind_knee
+    100016: L_hind_leg
+    100018: neck_1
+    100020: neck_2
+    100022: nose
+    100024: R_front_foot
+    100026: R_front_knee
+    100028: R_front_leg
+    100030: R_hind_foot
+    100032: R_hind_knee
+    100034: R_hind_leg
+    100036: root
+    100038: tail
+    100040: tail_tip
+    400000: //RootNode
+    400002: camel
+    400004: head
+    400006: L_front_foot
+    400008: L_front_knee
+    400010: L_front_leg
+    400012: L_hind_foot
+    400014: L_hind_knee
+    400016: L_hind_leg
+    400018: neck_1
+    400020: neck_2
+    400022: nose
+    400024: R_front_foot
+    400026: R_front_knee
+    400028: R_front_leg
+    400030: R_hind_foot
+    400032: R_hind_knee
+    400034: R_hind_leg
+    400036: root
+    400038: tail
+    400040: tail_tip
+    4300000: camel
+    7400000: Walk
+    7400002: Idle
+    9500000: //RootNode
+    13700000: camel
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camel
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/L_front_leg
+        weight: 1
+      - path: root/L_front_leg/L_front_knee
+        weight: 1
+      - path: root/L_front_leg/L_front_knee/L_front_foot
+        weight: 1
+      - path: root/L_hind_leg
+        weight: 1
+      - path: root/L_hind_leg/L_hind_knee
+        weight: 1
+      - path: root/L_hind_leg/L_hind_knee/L_hind_foot
+        weight: 1
+      - path: root/neck_1
+        weight: 1
+      - path: root/neck_1/neck_2
+        weight: 1
+      - path: root/neck_1/neck_2/head
+        weight: 1
+      - path: root/neck_1/neck_2/head/nose
+        weight: 1
+      - path: root/R_front_leg
+        weight: 1
+      - path: root/R_front_leg/R_front_knee
+        weight: 1
+      - path: root/R_front_leg/R_front_knee/R_front_foot
+        weight: 1
+      - path: root/R_hind_leg
+        weight: 1
+      - path: root/R_hind_leg/R_hind_knee
+        weight: 1
+      - path: root/R_hind_leg/R_hind_knee/R_hind_foot
+        weight: 1
+      - path: root/tail
+        weight: 1
+      - path: root/tail/tail_tip
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 62
+      lastFrame: 162
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: camel
+        weight: 1
+      - path: root
+        weight: 1
+      - path: root/L_front_leg
+        weight: 1
+      - path: root/L_front_leg/L_front_knee
+        weight: 1
+      - path: root/L_front_leg/L_front_knee/L_front_foot
+        weight: 1
+      - path: root/L_hind_leg
+        weight: 1
+      - path: root/L_hind_leg/L_hind_knee
+        weight: 1
+      - path: root/L_hind_leg/L_hind_knee/L_hind_foot
+        weight: 1
+      - path: root/neck_1
+        weight: 1
+      - path: root/neck_1/neck_2
+        weight: 1
+      - path: root/neck_1/neck_2/head
+        weight: 1
+      - path: root/neck_1/neck_2/head/nose
+        weight: 1
+      - path: root/R_front_leg
+        weight: 1
+      - path: root/R_front_leg/R_front_knee
+        weight: 1
+      - path: root/R_front_leg/R_front_knee/R_front_foot
+        weight: 1
+      - path: root/R_hind_leg
+        weight: 1
+      - path: root/R_hind_leg/R_hind_knee
+        weight: 1
+      - path: root/R_hind_leg/R_hind_knee/R_hind_foot
+        weight: 1
+      - path: root/tail
+        weight: 1
+      - path: root/tail/tail_tip
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.35000002
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

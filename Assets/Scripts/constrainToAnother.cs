@@ -28,7 +28,7 @@ public class constrainToAnother : MonoBehaviour
 			posOffset = transform.position - positionTarget.position;
 		}
 	}
-	void Update () 
+	void FixedUpdate () 
 	{
 		if (positionTarget==null)positionTarget=transform;
 		if (rotationTarget==null)rotationTarget=transform;
