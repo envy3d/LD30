@@ -12,4 +12,9 @@ public class EnemyScript : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void KillCharacter()
+    {
+        Destroy(gameObject);
+    }
 }

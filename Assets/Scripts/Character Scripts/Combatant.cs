@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerCombatant : AbstractCombatant
+public class Combatant : MonoBehaviour
 {
     public float health = 100;
     public float invincibilityTime = 0.5f;
@@ -11,15 +11,15 @@ public class PlayerCombatant : AbstractCombatant
     public WeaponScript weapon;
     public Transform weaponBind;
 
-    private bool invincible = false;
-    private bool readyToAttack = true;
+    public bool invincible = false;
+    public bool readyToAttack = true;
 
     void Start()
     {
         AddWeapon(weapon);
     }
 
-    public override void TakeDamage(float amount)
+    public void TakeDamage(float amount)
     {
         if (!invincible)
         {
@@ -28,7 +28,8 @@ public class PlayerCombatant : AbstractCombatant
 
             if (health <= 0)
             {
-                gameObject.GetComponent<PlayerScript>().Kill();
+                gameObject.SendMessage("KillCharacter");
+                //gameObject.GetComponent<PlayerScript>().Kill();
             }
             FinishAttack();  //deactivate weapon and stun
             Invoke("FinishInvincibility", invincibilityTime);
@@ -42,7 +43,7 @@ public class PlayerCombatant : AbstractCombatant
             Destroy(weapon.gameObject);
             weapon = GameObject.Instantiate(newWeapon) as WeaponScript;
             weapon.transform.parent = weaponBind;
-            weapon.enabled = false;
+            weapon.Deactivate();
         }
     }
 
@@ -50,7 +51,7 @@ public class PlayerCombatant : AbstractCombatant
     {
         if (readyToAttack)
         {
-            weapon.enabled = true;
+            weapon.Activate();
             Invoke("FinishAttack", attackTime);
             readyToAttack = false;
 
@@ -61,7 +62,8 @@ public class PlayerCombatant : AbstractCombatant
 
     public void FinishAttack()
     {
-        weapon.enabled = false;
+        weapon.Deactivate();
+        readyToAttack = false;
         Invoke("ReadyAttack", delayBetweenAttacks);
     }
 

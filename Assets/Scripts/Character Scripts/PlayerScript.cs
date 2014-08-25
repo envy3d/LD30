@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour
         this.destination = destination;
     }
 
-    public void Kill()
+    public void KillCharacter()
     {
         Destroy(gameObject);
     }
