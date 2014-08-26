@@ -9,11 +9,13 @@ public class GameManagerScript : MonoBehaviour
 
     public PlayerScript player;
     public CamelScript camel;
+    private BagScript bagScript;
     private int currentCity = 0;
 	
 	void Start()
     {
-        SetDestination(cities[0].name);
+        SetDestination(cities[1].name);
+        bagScript = gameObject.GetComponent<BagScript>();
 	}
 	
 	void Update()
@@ -53,6 +55,14 @@ public class GameManagerScript : MonoBehaviour
         var city = cities.Find(c => c.name == cityName);
         camel.SetDestination(city.camelDestination);
         player.SetDestination(city.playerDestination);
+    }
+
+    public void Steal()
+    {
+        if (bagScript.bagGoods.Count > 0)
+        {
+            bagScript.RemoveGood(bagScript.bagGoods[Random.Range(0, bagScript.bagGoods.Count - 1)].id);
+        }
     }
 
     private void ClearEnemiesFromMap()

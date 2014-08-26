@@ -17,9 +17,9 @@ public class CamelScript : MonoBehaviour
     {
         if (!atDestination)
         {
-            controller.Move(destination.transform.position.x - transform.position.x);
-            if (destination.transform.position.x - transform.position.x < 0.5f &&
-                destination.transform.position.x - transform.position.x > -0.5f)
+            controller.Move(destination.position.x - transform.position.x);
+            if (destination.position.x - transform.position.x < 0.5f &&
+                destination.position.x - transform.position.x > -0.5f)
             {
                 controller.Move(0);
                 atDestination = true;

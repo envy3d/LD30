@@ -28,11 +28,20 @@ public class EnemySpawnerScript : MonoBehaviour
             leftCameraBound = camBounds[2];
             rightCameraBound = camBounds[1];
         }
+
         Transform[] bounds = gameObject.GetComponentsInChildren<Transform>();
-        spawnPoint1 = bounds[1].position;
-        spawnPoint2 = bounds[2].position;
         bounds[1].GetComponent<MeshRenderer>().enabled = false;
         bounds[2].GetComponent<MeshRenderer>().enabled = false;
+        if (bounds[1].position.x < bounds[2].position.x)
+        {
+            spawnPoint1 = bounds[1].position;
+            spawnPoint2 = bounds[2].position;
+        }
+        else
+        {
+            spawnPoint1 = bounds[2].position;
+            spawnPoint2 = bounds[1].position;
+        }
 	}
 	
 	
@@ -56,7 +65,8 @@ public class EnemySpawnerScript : MonoBehaviour
         }
         var position = new Vector3(xLoc, transform.position.y, transform.position.z);
         var enemyIdx = Random.Range(0, enemyPrefabs.Count - 1);
-        GameObject.Instantiate(enemyPrefabs[enemyIdx], position, Quaternion.identity);
+        var enemy = GameObject.Instantiate(enemyPrefabs[enemyIdx], position, Quaternion.identity) as EnemyScript;
+        enemy.ems = this;
     }
 
     public void Activate()

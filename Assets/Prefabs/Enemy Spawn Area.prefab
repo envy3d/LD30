@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 27.8570004, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: -16.3899994, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400004}
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 34.2060013, y: 2.94829988, z: 0}
+  m_LocalPosition: {x: 9.84130001, y: .975430012, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -198,10 +198,10 @@ MonoBehaviour:
   spawnPoint1: {x: 0, y: 0, z: 0}
   spawnPoint2: {x: 0, y: 0, z: 0}
   enemyPrefabs:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: eaaea36e03f768e47bceb9b456e4f319, type: 2}
   spawnTime: 2
   readyToSpawn: 1
-  active: 0
+  active: 1
   leftCameraBound: {fileID: 0}
   rightCameraBound: {fileID: 0}
 --- !u!1001 &100100000

@@ -10,8 +10,12 @@ public class LeanController : MonoBehaviour
 	public float turnSmooth = 2f;
 	public bool  faceMoveDirection = true;
 	public float gravityAccel = 9.81f;
+    public float jumpGravityAccel = 9.81f;
+    public float jumpStartingSpeed = 10.0f;
+    public float normalYPosition;
 	
 	public Vector3 velocity;
+    public float ySpeed;
 	private Vector3 prevVelocity;
 	private Vector3 velocityRef;
 	public Vector3 accel;
@@ -20,7 +24,7 @@ public class LeanController : MonoBehaviour
 	private float prevLean;
     private Vector3 targetVelocity;
 
-    private bool touchingGround = false;
+    private bool touchingGround = true;
 
     public bool TouchingGround { get { return touchingGround; } }
 	
@@ -28,15 +32,40 @@ public class LeanController : MonoBehaviour
 	{
 		prevPosition = transform.position;
         targetVelocity = Vector3.zero;
+        normalYPosition = transform.position.y;
 	}
 
     public void Move(float amount)
     {
-        targetVelocity.x = amount;
+        if (touchingGround)
+        {
+            targetVelocity.x = amount;
+        }
     }
 
-	void Update() 
+    public void Jump()
+    {
+        if (touchingGround)
+        {
+            touchingGround = false;
+            ySpeed = jumpStartingSpeed;
+        }
+    }
+
+	void FixedUpdate() 
 	{
+        if (!touchingGround)
+        {
+            float yPosition = transform.position.y + (ySpeed * Time.fixedDeltaTime);
+            ySpeed = ySpeed + (-jumpGravityAccel * Time.fixedDeltaTime);
+            if (yPosition <= normalYPosition)
+            {
+                yPosition = normalYPosition;
+                touchingGround = true;
+            }
+            transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
+        }
+
 		prevVelocity = velocity;
 
 		Vector3 targetAccel = Vector3.zero;

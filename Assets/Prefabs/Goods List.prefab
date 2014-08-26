@@ -39,7 +39,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59514dcdb9dcb24ab0467b0be80e1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goods: []
+  goods:
+  - name: wheat
+    type: 0
+    value: 10
+    image: {fileID: 0}
+  - name: water
+    type: 1
+    value: 11
+    image: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
