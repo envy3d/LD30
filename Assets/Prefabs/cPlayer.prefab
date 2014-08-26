@@ -436,9 +436,9 @@ GameObject:
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400010}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: characterAnims
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

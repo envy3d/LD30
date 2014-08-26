@@ -8,7 +8,7 @@ public class BagScript : MonoBehaviour
     public List<BagGood> bagGoods;
     public int capacity = 4;
 
-    private long nextId = 0;
+    private int nextId = 0;
     private List<Good> baseGoods;
 
     void Awake()

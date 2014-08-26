@@ -1641,7 +1641,7 @@ MonoBehaviour:
   playerAggroDist: 8
   camelAggroDist: 5
   attackDist: 1.20000005
-  stealDist: 2
+  stealDist: 2.5
   ems: {fileID: 0}
   moveSpeedX: 0
   stealFromBagTime: 1

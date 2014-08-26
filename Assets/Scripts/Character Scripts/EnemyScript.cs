@@ -138,6 +138,7 @@ public class EnemyScript : MonoBehaviour
             SetTarget(transform.position);
             animator.SetTrigger("Steal");
             Invoke("Steal", stealFromBagTime);
+            Debug.Log("Steal");
             Pause();
             // Steal!!
             return;
@@ -160,7 +161,7 @@ public class EnemyScript : MonoBehaviour
     private void EnterPatrol()
     {
         CreatePatrolTarget();
-        Debug.Log("Enter Patrol");
+        //Debug.Log("Enter Patrol");
     }
 
     private void ExitPatrol()
@@ -203,7 +204,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (state == AIState.Patrol)
         {
-            Debug.Log("Create Patrol");
+            //Debug.Log("Create Patrol");
             Invoke("CreatePatrolTarget", Random.Range(3.0f, 10.0f));
             var targetX = Random.Range(ems.spawnPoint1.x, ems.spawnPoint2.x);
             SetTarget(new Vector3(targetX, transform.position.y, transform.position.z));
@@ -215,6 +216,7 @@ public class EnemyScript : MonoBehaviour
         Unpause();
         if (state == AIState.Theft && Mathf.Abs(transform.position.x - camel.position.x) < stealDist)
         {
+            Debug.Log("Stole");
             GameObject.FindGameObjectWithTag("Game Manager").GetComponent<GameManagerScript>().Steal();
         }
     }

@@ -6,6 +6,6 @@ public class BagGood
 {
 
     public string name;
-    public long id;
+    public int id;
 
 }
