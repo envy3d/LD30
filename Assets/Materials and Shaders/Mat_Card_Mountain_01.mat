@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Mat_Card_Mountain_01
-  m_Shader: {fileID: 4800000, guid: 48fa68a09cab83a47bfb6376109aa764, type: 3}
+  m_Shader: {fileID: 4800000, guid: f03edbf410b972f4fabebe12eef75ceb, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -24,6 +24,10 @@ Material:
       data:
         first:
           name: _InvFade
+        second: 1
+      data:
+        first:
+          name: _FogStrength
         second: 1
     m_Colors:
       data:

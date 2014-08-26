@@ -46,3 +46,11 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: foreground
+    userID: 1
+    uniqueID: 3132430049
+    locked: 0
+  - name: New Layer 2
+    userID: 2
+    uniqueID: 2754410821
+    locked: 0
