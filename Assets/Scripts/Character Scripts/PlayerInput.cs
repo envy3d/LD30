@@ -5,12 +5,14 @@ public class PlayerInput : AbstractInput
 {
     private PlayerScript player;
     private Combatant combat;
+    private Animator animator;
 
     void Start()
     {
         base.Start();
         player = gameObject.GetComponent<PlayerScript>();
         combat = gameObject.GetComponent<Combatant>();
+        animator = gameObject.GetComponentInChildren<Animator>();
 	}
 
     void Update()
@@ -21,7 +23,8 @@ public class PlayerInput : AbstractInput
 
             if (controller.TouchingGround && Input.GetButtonDown("Jump"))
             {
-
+                animator.SetTrigger("Jump");
+                controller.Jump();
             }
             else if (Input.GetButtonDown("Action"))
             {
@@ -33,6 +36,7 @@ public class PlayerInput : AbstractInput
                 else
                 {
                     combat.Attack();
+                    animator.SetTrigger("Attack");
                 }
             }
         }

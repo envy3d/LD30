@@ -27,7 +27,6 @@ public class PlayerScript : MonoBehaviour
     {
         if (gms.TryToAccessShop())
         {
-            Debug.Log("Access Shop true");
             return true;
         }
         return false;

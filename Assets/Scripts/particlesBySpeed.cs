@@ -15,14 +15,12 @@ public class particlesBySpeed : MonoBehaviour
 	private Vector3 previousPosition;
 	private float previousSpeed;
 
-	// Use this for initialization
-	void Start () 
+	void Start() 
 	{
 		previousPosition = transform.position;
 	}
 	
-	// Update is called once per frame
-	void Update () 
+	void Update() 
 	{
 		speed = Mathf.Lerp(previousSpeed, Vector3.Magnitude(transform.position - previousPosition) / Time.deltaTime, Time.deltaTime * 10/speedSmooth);
 

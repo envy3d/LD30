@@ -14,9 +14,11 @@ public class Combatant : MonoBehaviour
     public bool invincible = false;
     public bool readyToAttack = true;
 
+    private WeaponScript currentWeapon;
+
     void Start()
     {
-        AddWeapon(weapon);
+        SetWeapon(weapon);
     }
 
     public void TakeDamage(float amount)
@@ -41,10 +43,17 @@ public class Combatant : MonoBehaviour
         if (newWeapon != null)
         {
             Destroy(weapon.gameObject);
-            weapon = GameObject.Instantiate(newWeapon) as WeaponScript;
-            weapon.transform.parent = weaponBind;
-            weapon.Deactivate();
+            SetWeapon(newWeapon);
         }
+    }
+
+    private void SetWeapon(WeaponScript newWeapon)
+    {
+        weapon = GameObject.Instantiate(newWeapon) as WeaponScript;
+        weapon.transform.parent = weaponBind;
+        weapon.transform.localPosition = weapon.transform.position;
+        weapon.transform.localRotation = weapon.transform.rotation;
+        weapon.Deactivate();
     }
 
     public bool Attack()
